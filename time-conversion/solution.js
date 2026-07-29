@@ -10,7 +10,7 @@ function timeConversion(s) {
     const period = s.slice(-2);         
     const [hh, mm, ss] = s.slice(0, -2).split(":");  
 
-    let hour = parseInt(hh);
+    let hour = Number(hh);
 
     if (period === "AM") {
         hour = hour === 12 ? 0 : hour;
