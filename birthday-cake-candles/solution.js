@@ -20,7 +20,8 @@ function birthdayCakeCandles(candles) {
         }
     }
 
-    return result;
+    return maxCount;
 }
-
+// let maxHeight = Math.max(...candles);
+// return candles.filter(c => c === maxHeight).length;
 module.exports = birthdayCakeCandles;
