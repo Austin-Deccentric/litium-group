@@ -7,8 +7,31 @@
  *  2. STRING password
  */
 
+
 function minimumNumber(n, password) {
-  // TODO: return an array of error messages for each rule the password fails
+    let msgs = [];
+
+    if (n < 6) {
+        msgs.push("Password must be at least 6 characters");
+    }
+
+    if (!/\d/.test(password)) {
+        msgs.push("Password must contain at least one digit",);
+    }
+
+    if (!/[a-z]/.test(password)) {
+        msgs.push("Password must contain at least one lowercase letter")
+    }
+
+    if (!/[A-Z]/.test(password)) {
+        msgs.push("Password must contain at least one uppercase letter")
+    }
+
+    if (!/[!@#$%^&*()\-+]/.test(password)) {
+        msgs.push("Password must contain at least one special character (!@#$%^&*()-+)")
+    }
+
+    return msgs;
 }
 
 module.exports = minimumNumber;
