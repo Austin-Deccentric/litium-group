@@ -5,9 +5,23 @@
  * The function accepts STRING s as parameter.
  */
 
+
 function timeConversion(s) {
-  // TODO: convert 12-hour AM/PM format to 24-hour military time format
+    const period = s.slice(-2);         
+    const [hh, mm, ss] = s.slice(0, -2).split(":");  
+
+    let hour = parseInt(hh);
+
+    if (period === "AM") {
+        hour = hour === 12 ? 0 : hour;
+    } else {
+        hour = hour === 12 ? 12 : hour + 12;
+    }
+
+    return `${String(hour).padStart(2, "0")}:${mm}:${ss}`;
 }
+
+
 
 
 module.exports = timeConversion;
