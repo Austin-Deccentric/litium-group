@@ -12,7 +12,9 @@ function uniqueArraySum(ar) {
   }
 
   let uniqArr =  ar.filter(onlyUnique);
-  let sumofAr = uniqArr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  let sumofAr = uniqArr.reduce((accumulator, currentValue) =>{
+    return accumulator + currentValue
+  } , 0);
   return sumofAr;
 }
 
