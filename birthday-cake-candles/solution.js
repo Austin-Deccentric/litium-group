@@ -7,16 +7,15 @@
 
 function birthdayCakeCandles(candles) {
   // TODO: return the number of tallest candles
-    let m = {};
+    let freqtable = {};
     let maxCount = 0;
-    let result = null;
 
     for (let candle of candles) {
-        m[candle] = (m[candle] || 0) + 1;
+        freqtable[candle] = (freqtable[candle] ?? 0) + 1;
 
-        if (m[candle] > maxCount) {
-            maxCount = m[candle];
-            result = candle;
+
+        if (freqtable[candle] > maxCount) {
+            maxCount = freqtable[candle];
         }
     }
 
